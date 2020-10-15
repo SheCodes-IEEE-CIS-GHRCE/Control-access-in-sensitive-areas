@@ -155,3 +155,55 @@ def predic_member(fname):
     test_image = np.expand_dims(test_image, axis = 0)
     result = model.predict(test_image)
     return result
+   
+   
+#flask
+from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
+
+app = Flask(__name__)
+#app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route('/success', methods = ['POST'])  
+def success():  
+    if request.method == 'POST':  
+        f = request.files['file']  
+        f.save(f.filename)
+        result = "testing.."
+        res= predic_member(f.filename)
+       
+       
+
+        if res[0][0] == 1:
+            result="Anna"
+
+        elif res[0][1] == 1:
+            result = 'Daniel'
+
+        elif res[0][2] ==1:
+            result ='Megan'
+
+        elif res[0][3] ==1:
+            result ='Rick'
+
+        
+
+        obj = {"name":"", "token":"no"}
+
+        obj["name"] = result
+        allowed = ['Megan','Rick']
+        if(result in allowed):
+            obj["token"] = "yes"
+        print(obj)
+        
+          
+        return render_template("success.html", res=obj)
+    
+
+
+app.run()    
+
+
