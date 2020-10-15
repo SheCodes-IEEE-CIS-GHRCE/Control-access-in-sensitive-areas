@@ -1,0 +1,18 @@
+section {
+    max-width: 500px;
+    margin: auto;
+    padding: 100px;
+}
+
+.bgImg {
+    background-image: url("bg.gif");
+    color: whitesmoke;
+}
+
+.card {
+    background-color: gainsboro;
+    width: 300px;
+    border: 15px solid rgba(131, 136, 163, 0.658);
+    padding: 50px;
+    margin: 20px;
+}
