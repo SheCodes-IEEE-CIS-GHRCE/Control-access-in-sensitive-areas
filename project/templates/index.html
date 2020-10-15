@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Labs</title>
+    <link rel="stylesheet" href="static/styles/style6.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body class="bgImg">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="http://127.0.0.1:5000/" class="navbar-brand">Secure Labs</a>
+            </div>
+    </nav>
+    <section class="container">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <form action="/success" method="post" enctype="multipart/form-data">
+                    <label for="file">Select a file:</label><br>
+                    <input type="file" id="file" name="file" accept="image/*" onchange="loadFile(event)"><br><br>
+                    <img src="static/cloud.jpg" id="output" height="250" width="250"><br><br>
+
+                    <button type="submit" class="btn btn-primary" onclick="myFunction()">Verify</button>
+
+
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="static/js/idx.js?timestamp=2837482.2456" type="text/javascript"></script>
+</body>
+
+</html>

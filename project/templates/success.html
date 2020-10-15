@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>processing</title>
+    <link rel="stylesheet" href="static/styles/style6.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body class="bgImg">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="http://127.0.0.1:5000/" class="navbar-brand">Secure Labs</a>
+            </div>
+    </nav>
+    <section class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <h2 style="color:black; text-decoration: underline;">RESULT</h2>
+
+                    <p style="color:rgb(26, 22, 22);font-size: xx-large;"><strong>Hi <span style="color:rgba(25, 146, 202, 0.767);font-size: xx-large;">{{res.name}},</span></strong>
+                        <span><strong id="here" style="font-size: small;"></strong></span>
+
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row align-items-center"><img src="" alt="oops" style="height:80px;width:180px;" id="image"></div>
+    </section>
+    <script type="text/javascript">
+        var token = '{{res.token}}';
+        console.log(token);
+        if (token == "yes") {
+            document.getElementById("image").src = "static/yes.png";
+            document.getElementById("here").innerHTML = "Your entry is successful."
+        } else {
+            document.getElementById("image").src = "static/no.png";
+            document.getElementById("here").innerHTML = "You are not authorized to enter."
+        }
+    </script>
+</body>
+
+</html>
